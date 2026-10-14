@@ -8,7 +8,7 @@ Get the game package from [Releases](https://github.com/ChaDea1/RaptorPS5/releas
 
 ## Compatibility
 
-Tested on PS5 firmware **13.42**, with **kstuff** and **ShadowMountPlus v1.7beta4**. Other firmware versions are untested. Testing confirms startup, video, audio, controls and overlays work with owned full-game data. Saves are working for both the Shareware version and while using the episode packs. Individual extra-episode have also been tested and are confirmed to be working.
+Tested on PS5 firmware **13.42**, with **kstuff** and **ShadowMountPlus v1.7beta4**. Other firmware versions are untested. Saves are working for both the Shareware version and while using the episode packs. Individual extra-episode have also been tested and are confirmed to be fully working.
 
 ## Install
 
@@ -60,3 +60,5 @@ Open an issue with firmware, loader versions, reproduction steps, and whether yo
 ## Known Issues
 
 Quit game causes a crash. Graceful exit will be implemented at a later SOON! For now, exit by going to switcher and closing the game, or going to the dashboard and closing it that way.
+
+Shareware version saves to the program's root folder. Full version saves to the content folder. This will be fixed soon as well.
