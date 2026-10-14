@@ -6,7 +6,7 @@ Unofficial native PS5 port of **Raptor: Call of the Shadows**, based on skynettx
 
 ## Download
 
-Get the game package from [Releases](https://github.com/ChaDea1/RaptorPS5/releases). **v0.1.0-alpha.1** is an early alpha. Bundled shareware works out of the box; full-game data is not included.
+Get the game package from [Releases](https://github.com/ChaDea1/RaptorPS5/releases). **v0.2.0-beta.1** is the current beta prerelease. Bundled shareware works out of the box; full-game data is not included.
 
 ## Compatibility
 
@@ -14,7 +14,7 @@ Tested on PS5 firmware **13.42**, with **kstuff** and **ShadowMountPlus v1.7beta
 
 ## Install
 
-1. Extract `raptor-ps5-v0.1.0-alpha.1.zip`.
+1. Extract `raptor-ps5-v0.2.0-beta.1.zip`.
 2. Copy the complete `PPSA94002` folder to `/data/homebrew/`.
 3. Launch **Raptor: Call of the Shadows** from the dashboard.
 
@@ -63,8 +63,19 @@ Created using Codex/ChatGPT. If you don't like that, then I'm sorry i guess? Not
 
 Open an issue with firmware, loader versions, reproduction steps, and whether you use bundled shareware or your own full-game data. Do not upload copyrighted full-game data or private information.
 
-## Known Issues
+## Beta status
 
-Quit game causes a crash. Graceful exit will be implemented at a later SOON! For now, exit by going to switcher and closing the game, or going to the dashboard and closing it that way.
+Core gameplay, shareware and owned full-game episodes, audio, controls, overlays, saving/loading and Quit to dashboard have been confirmed by the owner on the tested setup. Wider console and firmware coverage is still needed before a stable release.
 
-Shareware version saves to the program's root folder. Full version saves to the content folder. This will be fixed soon as well.
+## Saves and updating
+
+Both shareware and full-game pilots now use `/data/homebrew/PPSA94002/saves/`. The game creates the folder when needed. There are ten pilot slots shared between both modes. Configuration stays in the base app folder.
+
+When upgrading from alpha:
+
+1. Fully close Raptor and back up existing saves and configuration.
+2. Replace `eboot.bin` from the new package. Keep your `content/`, `saves/` and `SETUP.INI`.
+3. Copy existing `CHAR0000.FIL` through `CHAR0009.FIL` from the old app root or `content/` into `saves/`. Do not overwrite another pilot; use an unused slot filename if needed.
+4. Restart and verify your pilots load. Retain the original files as backups until confirmed.
+
+The update does not automatically migrate old pilot files. See `saves/README.txt` in the package. Quit Game now returns to the dashboard gracefully.
