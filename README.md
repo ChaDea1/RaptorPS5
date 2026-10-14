@@ -6,7 +6,7 @@ Unofficial native PS5 port of **Raptor: Call of the Shadows**, based on skynettx
 
 ## Download
 
-Get the game package from [Releases](https://github.com/ChaDea1/RaptorPS5/releases). **v0.2.0-beta.3** is the current beta prerelease. The package includes no game data. On first launch, download free Apogee shareware or supply your own matching DOS game files.
+Get the game package from [Releases](https://github.com/ChaDea1/RaptorPS5/releases). **v0.2.0-beta.4** is the current beta prerelease. The package includes no game data. On first launch, download free Apogee shareware or supply your own matching DOS game files.
 
 ## Compatibility
 
@@ -14,7 +14,7 @@ Tested on PS5 firmware **13.42**, with **kstuff** and **ShadowMountPlus v1.7beta
 
 ## Install
 
-1. Extract `raptor-ps5-v0.2.0-beta.3.zip`.
+1. Extract `raptor-ps5-v0.2.0-beta.4.zip`.
 2. Copy the complete `PPSA94002` folder to `/data/homebrew/`.
 3. Launch **Raptor: Call of the Shadows** from the dashboard.
 4. Choose **Download free Apogee shareware** (Internet required once), or **Use my own game files**. Existing matching data works offline.
@@ -48,7 +48,7 @@ Keyboard: D-pad selects a key, Cross presses it, Square sends Backspace, Triangl
 
 The release includes the modified source archive and SHA-256 checksums alongside the binary package. Source archive includes the Raptor port, modified PS5 SDL, native application toolkit, hooks and build scripts. Build requires the public PS5 payload SDK, LLVM/Clang, CMake and Make; the archive does not bundle the compiler or SDK. Existing workspace build scripts assume locally prepared dependencies.
 
-Upstream license texts are retained in the source and game package. Raptor source is GPL-2.0-or-later; the native toolkit is GPL-3.0; SDL uses the zlib license; bundled miniz uses the MIT license. Original game data retains its original rights and is separate from the source licenses. No registered/full-game assets are distributed.
+Upstream license texts are retained in the source and game package. Raptor source is GPL-2.0-or-later; the native toolkit is GPL-3.0-or-later; SDL uses the zlib license; miniz and TinySoundFont use MIT licenses. This distribution elects GPL-3.0-or-later for its Nuked OPL3 copy under upstream LGPL-2.1 section 3; upstream remains LGPL-2.1-or-later. Font copyright and permission notices are retained. The binary package and corresponding-source archive include the notices in `native/licenses/`, including the dated PS5 modification record and source/rebuild guidance. Original game data retains its original rights and is separate from the source licenses. No registered/full-game assets are distributed.
 
 ## Credits
 
@@ -83,7 +83,7 @@ The update does not automatically migrate old pilot files. See `saves/README.txt
 
 ## First-launch data setup
 
-Beta.3 distributes no GLBs, shareware ZIP, DOS executables or personal pilots. The optional, player-initiated shareware download comes from DOSGames.com over verified HTTPS. The complete original ZIP is retained as `shareware-original.zip` beside `eboot.bin`; only the two pinned, SHA-256-verified GLBs are extracted into `/data/homebrew/PPSA94002/`. The package does not download registered/full-game content.
+Beta.4 distributes no GLBs, shareware ZIP, DOS executables or personal pilots. The optional, player-initiated shareware download comes from DOSGames.com over verified HTTPS. The complete downloaded ZIP is retained as `shareware-original.zip` beside `eboot.bin`; only the two pinned, SHA-256-verified GLBs are extracted into `/data/homebrew/PPSA94002/`. The package does not download registered/full-game content.
 
 Your matching `content/` files take priority over downloaded shareware. Legacy data in `/data/raptor/` also remains supported. The old `/download0/raptor-shareware/` location is ignored. To bring setup back, remove the GLBs from the installed title root, `content/`, and any other supported data folder, then fully close and restart. Keep `saves/` to preserve your pilots. Keeping the original ZIP allows setup to reinstall verified shareware without another network download; the ZIP alone does not skip setup.
 
@@ -91,4 +91,10 @@ A six-second top-left popup reports shareware, the full game, or installed episo
 
 ## Catalog release metadata
 
-Beta.3 ships `contentVersion` **00.004.000** and title ID **PPSA94002**. Committed `sce_sys/param.json` and `sce_sys/icon0.png` match the release package. The repository-level LICENSE is GPL-3.0 for the combined native port; individual upstream notices remain in the attached corresponding-source archive. Game data retains its original rights. No game data is distributed with beta.3.
+Beta.4 ships `contentVersion` **00.005.000** and title ID **PPSA94002**. Committed `sce_sys/param.json` and `sce_sys/icon0.png` match the release package. The repository-level LICENSE is GPL-3.0 for the combined native port; individual upstream notices remain in the attached corresponding-source archive. Game data retains its original rights. No game data is distributed with beta.4.
+
+## Beta.4 license-notice corrections
+
+Beta.4 adds TinySoundFont's MIT notice, textscreen font attributions, the original Nuked OPL3 LGPL text for provenance, and an explicit GPLv3 election for the shipped OPL3 copy. It adds dated PS5 modification notices, a component notice summary and corresponding-source/rebuild guidance. See `licenses/` in the installed app and `native/licenses/` in the attached source archive. The executable and runtime are byte-for-byte identical to the console-tested beta.3; the content version and notices change.
+
+The optional downloader is retained. These code-license corrections do not resolve the separate shareware/download permission questions or constitute publisher attestation. The publisher confirmation remains unchecked in the catalog submission.
