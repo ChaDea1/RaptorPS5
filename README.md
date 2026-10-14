@@ -1,3 +1,5 @@
+![Raptor: Call of the Shadows — PS5 port](raptor-banner.png)
+
 # RaptorPS5
 
 Unofficial native PS5 port of **Raptor: Call of the Shadows**, based on skynettx’s SDL2 port.
