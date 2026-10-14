@@ -96,5 +96,3 @@ Beta.4 ships `contentVersion` **00.005.000** and title ID **PPSA94002**. Committ
 ## Beta.4 license-notice corrections
 
 Beta.4 adds TinySoundFont's MIT notice, textscreen font attributions, the original Nuked OPL3 LGPL text for provenance, and an explicit GPLv3 election for the shipped OPL3 copy. It adds dated PS5 modification notices, a component notice summary and corresponding-source/rebuild guidance. See `licenses/` in the installed app and `native/licenses/` in the attached source archive. The executable and runtime are byte-for-byte identical to the console-tested beta.3; the content version and notices change.
-
-The optional downloader is retained. These code-license corrections do not resolve the separate shareware/download permission questions or constitute publisher attestation. The publisher confirmation remains unchecked in the catalog submission.
