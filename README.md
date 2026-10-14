@@ -10,7 +10,7 @@ Get the game package from [Releases](https://github.com/ChaDea1/RaptorPS5/releas
 
 ## Compatibility
 
-Tested on PS5 firmware **13.42**, with **kstuff** and **ShadowMountPlus v1.7beta4**. Other firmware versions are untested. Saves are working for both the Shareware version and while using the episode packs. Individual extra-episode have also been tested and are confirmed to be fully working.
+Tested on PS5 firmware **13.42**, with **kstuff** and **ShadowMountPlus v1.7beta4**. Other firmware versions are untested. Saves are working for both the Shareware version and while using the episode packs. Individual extra-episodes have also been tested and are confirmed to be fully working.
 
 ## Install
 
@@ -23,11 +23,11 @@ Close the game before updating. Back up existing pilot saves and configuration b
 
 ## Full game
 
-Copy your own matching DOS game GLBs (`FILE0000.GLB` through `FILE0004.GLB`, plus any others supplied) directly into `PPSA94002/content/`, or `/data/homebrew/PPSA94002/content/` after installation. Uppercase and lowercase canonical filenames work. Archives, installers and nested folders are not read. See `content/README.txt` in the package. Fully close and restart the game after changing content. Remove custom GLBs to return to downloaded shareware, if installed.
+Copy your own matching DOS game GLBs (`FILE0000.GLB` through `FILE0004.GLB`, plus any others supplied) directly into `PPSA94002/content/`, or `/data/homebrew/PPSA94002/content/` after installation. Uppercase and lowercase canonical filenames work. Archives, installers and nested folders are not read. See `content/README.txt` in the package. Fully close and restart the game after changing content. Remove custom GLBs to return to downloaded shareware screen, if installed.
 
 ## NOTE
 
-The OSK was implemented for inputting your pilot name and call sign when starting a new game. Use cross to highlight the name field and bring up the OSK. Input what you want, hit triangle to cycle to the callsign field, and hit triangle again to proceed to the difficulty selection popup. Circle backs out of the keyboard.
+The OSK was implemented for inputting your pilot name and callsign when starting a new game. Use cross to highlight the name field and bring up the OSK. Input what you want, hit triangle to cycle to the callsign field, and hit triangle again to proceed to the difficulty selection popup. Circle backs out of the keyboard.
 
 ## DualSense controls
 
@@ -36,13 +36,13 @@ The OSK was implemented for inputting your pilot name and call sign when startin
 | Left stick / D-pad | Move |
 | R2 / Cross | Fire |
 | L1 / R1 / Circle | Cycle special weapons |
-| Square / Triangle | Megabomb (requires inventory) |
+| Square / Triangle | Megabomb |
 | Touchpad click | Pause / resume |
-| Short Options press | Abort confirmation / Back |
+| Short Options press | Abort mission dialog |
 | Hold Options for 700 ms | Toggle keyboard |
-| R3 | Toggle controls reference |
+| R3 | Toggle controls reference overlay|
 
-Keyboard: D-pad selects a key, Cross presses it, Square sends Backspace, Triangle sends Enter, and Circle closes. Keyboard and controls reference are mutually exclusive. The game continues while overlays are open; use touchpad to pause.
+Keyboard: D-pad selects a character, Cross inputs it, Square sends Backspace, Triangle sends Enter, and Circle closes. The game continues while overlays are open; use touchpad to pause.
 
 ## Source and licensing
 
@@ -58,11 +58,11 @@ Upstream license texts are retained in the source and game package. Raptor sourc
 - Original Raptor creators and respective rights holders.
 
 Dashboard artwork was AI-generated. This is an unofficial community port.
-Created using Codex/ChatGPT. If you don't like that, then I'm sorry i guess? Not really though.
+Created using Codex/ChatGPT. If you don't like that, then I'm sorry I guess? Not really though.
 
 ## Reporting problems
 
-Open an issue with firmware, loader versions, reproduction steps, and whether you use downloaded shareware or your own full-game data. Do not upload copyrighted full-game data or private information.
+Open an issue with firmware, loader versions, reproduction steps, and whether you use downloaded shareware or your own full-game data. Never upload copyrighted full-game data or private information.
 
 ## Beta status
 
@@ -79,7 +79,7 @@ When upgrading from alpha:
 3. Copy existing `CHAR0000.FIL` through `CHAR0009.FIL` from the old app root or `content/` into `saves/`. Do not overwrite another pilot; use an unused slot filename if needed.
 4. Restart and verify your pilots load. Retain the original files as backups until confirmed.
 
-The update does not automatically migrate old pilot files. See `saves/README.txt` in the package. Quit Game now returns to the dashboard gracefully.
+The update does not automatically migrate old pilot files. See `saves/README.txt` in the package. Quit Game  returns to the dashboard gracefully.
 
 ## First-launch data setup
 
