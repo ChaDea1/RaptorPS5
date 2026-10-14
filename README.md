@@ -8,12 +8,12 @@ Get the game package from [Releases](https://github.com/ChaDea1/RaptorPS5/releas
 
 ## Compatibility
 
-Tested on PS5 firmware **13.42**, with **kstuff** and **ShadowMountPlus v1.7beta4**. Other firmware versions are untested. Owner testing confirms startup, video, audio, controls and overlays work with owned full-game data. Saves appear to work; back them up. Individual extra-episode missions have not been separately documented as tested.
+Tested on PS5 firmware **13.42**, with **kstuff** and **ShadowMountPlus v1.7beta4**. Other firmware versions are untested. Testing confirms startup, video, audio, controls and overlays work with owned full-game data. Saves are working for both the Shareware version and while using the episode packs. Individual extra-episode have also been tested and are confirmed to be working.
 
 ## Install
 
 1. Extract `raptor-ps5-v0.1.0-alpha.1.zip`.
-2. Copy the complete `PPSA94002` folder to `/data/homebrew/` using your existing ShadowMountPlus setup.
+2. Copy the complete `PPSA94002` folder to `/data/homebrew/`.
 3. Launch **Raptor: Call of the Shadows** from the dashboard.
 
 Close the game before updating. Back up existing pilot saves and configuration before replacing files.
@@ -51,7 +51,12 @@ Upstream license texts are retained in the source and game package. Raptor sourc
 - Original Raptor creators and respective rights holders.
 
 Dashboard artwork was AI-generated. This is an unofficial community port.
+Created using Codex/ChatGPT. If you don't like that, then I'm sorry i guess? Not really though.
 
 ## Reporting problems
 
 Open an issue with firmware, loader versions, reproduction steps, and whether you use bundled shareware or your own full-game data. Do not upload copyrighted full-game data or private information.
+
+## Known Issues
+
+Quit game causes a crash. Graceful exit will be implemented at a later SOON! For now, exit by going to switcher and closing the game, or going to the dashboard and closing it that way.
