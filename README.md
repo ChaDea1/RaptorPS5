@@ -6,7 +6,7 @@ Unofficial native PS5 port of **Raptor: Call of the Shadows**, based on skynettx
 
 ## Download
 
-Get the game package from [Releases](https://github.com/ChaDea1/RaptorPS5/releases). **v0.2.0-beta.1** is the current beta prerelease. Bundled shareware works out of the box; full-game data is not included.
+Get the game package from [Releases](https://github.com/ChaDea1/RaptorPS5/releases). **v0.2.0-beta.2** is the current beta prerelease. Bundled shareware works out of the box; full-game data is not included.
 
 ## Compatibility
 
@@ -14,7 +14,7 @@ Tested on PS5 firmware **13.42**, with **kstuff** and **ShadowMountPlus v1.7beta
 
 ## Install
 
-1. Extract `raptor-ps5-v0.2.0-beta.1.zip`.
+1. Extract `raptor-ps5-v0.2.0-beta.2.zip`.
 2. Copy the complete `PPSA94002` folder to `/data/homebrew/`.
 3. Launch **Raptor: Call of the Shadows** from the dashboard.
 
@@ -79,3 +79,9 @@ When upgrading from alpha:
 4. Restart and verify your pilots load. Retain the original files as backups until confirmed.
 
 The update does not automatically migrate old pilot files. See `saves/README.txt` in the package. Quit Game now returns to the dashboard gracefully.
+
+## Catalog release metadata
+
+The catalog-ready beta ships `contentVersion` **00.003.000** and title ID **PPSA94002**. Committed `sce_sys/param.json` and `sce_sys/icon0.png` match the release package. This release only prepares metadata and licensing for catalog submission; gameplay is unchanged from beta.1.
+
+The repository-level LICENSE is GPL-3.0 for the combined native port; individual upstream notices remain in the attached corresponding-source archive. Original shareware game data is separate and is not relicensed under the GPL. No registered/full-game files are distributed.
