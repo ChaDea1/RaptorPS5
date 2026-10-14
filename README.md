@@ -26,7 +26,7 @@ Copy your own matching DOS game GLBs (`FILE0000.GLB` through `FILE0004.GLB`, plu
 
 ## NOTE
 
-The OSK was implemented for imputing your pilot name and call sign when starting a new game. Use cross to highlight the name field and bring up the OSK. Input what you want, hit triangle to cycle to the callsign field, and hit triangle again to proceed to the difficulty selection popup. Circle backs out of the keyboard.
+The OSK was implemented for inputting your pilot name and call sign when starting a new game. Use cross to highlight the name field and bring up the OSK. Input what you want, hit triangle to cycle to the callsign field, and hit triangle again to proceed to the difficulty selection popup. Circle backs out of the keyboard.
 
 ## DualSense controls
 
