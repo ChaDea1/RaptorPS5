@@ -24,6 +24,10 @@ Close the game before updating. Back up existing pilot saves and configuration b
 
 Copy your own matching DOS game GLBs (`FILE0000.GLB` through `FILE0004.GLB`, plus any others supplied) directly into `PPSA94002/content/`, or `/data/homebrew/PPSA94002/content/` after installation. Uppercase and lowercase canonical filenames work. Archives, installers and nested folders are not read. See `content/README.txt` in the package. Fully close and restart the game after changing content. Remove custom GLBs to return to shareware.
 
+## NOTE
+
+The OSK was implemented for imputing your pilot name and call sign when starting a new game. Use cross to highlight the name field and bring up the OSK. Input what you want, hit triangle to cycle to the callsign field, and hit triangle again to proceed to the difficulty selection popup. Circle backs out of the keyboard.
+
 ## DualSense controls
 
 | Control | Action |
