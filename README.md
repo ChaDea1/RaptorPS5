@@ -6,7 +6,7 @@ Unofficial native PS5 port of **Raptor: Call of the Shadows**, based on skynettx
 
 ## Download
 
-Get the game package from [Releases](https://github.com/ChaDea1/RaptorPS5/releases). **v0.2.0-beta.2** is the current beta prerelease. Bundled shareware works out of the box; full-game data is not included.
+Get the game package from [Releases](https://github.com/ChaDea1/RaptorPS5/releases). **v0.2.0-beta.3** is the current beta prerelease. The package includes no game data. On first launch, download free Apogee shareware or supply your own matching DOS game files.
 
 ## Compatibility
 
@@ -14,15 +14,16 @@ Tested on PS5 firmware **13.42**, with **kstuff** and **ShadowMountPlus v1.7beta
 
 ## Install
 
-1. Extract `raptor-ps5-v0.2.0-beta.2.zip`.
+1. Extract `raptor-ps5-v0.2.0-beta.3.zip`.
 2. Copy the complete `PPSA94002` folder to `/data/homebrew/`.
 3. Launch **Raptor: Call of the Shadows** from the dashboard.
+4. Choose **Download free Apogee shareware** (Internet required once), or **Use my own game files**. Existing matching data works offline.
 
 Close the game before updating. Back up existing pilot saves and configuration before replacing files.
 
 ## Full game
 
-Copy your own matching DOS game GLBs (`FILE0000.GLB` through `FILE0004.GLB`, plus any others supplied) directly into `PPSA94002/content/`, or `/data/homebrew/PPSA94002/content/` after installation. Uppercase and lowercase canonical filenames work. Archives, installers and nested folders are not read. See `content/README.txt` in the package. Fully close and restart the game after changing content. Remove custom GLBs to return to shareware.
+Copy your own matching DOS game GLBs (`FILE0000.GLB` through `FILE0004.GLB`, plus any others supplied) directly into `PPSA94002/content/`, or `/data/homebrew/PPSA94002/content/` after installation. Uppercase and lowercase canonical filenames work. Archives, installers and nested folders are not read. See `content/README.txt` in the package. Fully close and restart the game after changing content. Remove custom GLBs to return to downloaded shareware, if installed.
 
 ## NOTE
 
@@ -47,7 +48,7 @@ Keyboard: D-pad selects a key, Cross presses it, Square sends Backspace, Triangl
 
 The release includes the modified source archive and SHA-256 checksums alongside the binary package. Source archive includes the Raptor port, modified PS5 SDL, native application toolkit, hooks and build scripts. Build requires the public PS5 payload SDK, LLVM/Clang, CMake and Make; the archive does not bundle the compiler or SDK. Existing workspace build scripts assume locally prepared dependencies.
 
-Upstream license texts are retained in the source and game package. Raptor source is GPL-2.0-or-later; the native toolkit is GPL-3.0; SDL uses the zlib license. Original game data retains its original rights and is separate from the source licenses. No registered/full-game assets are distributed.
+Upstream license texts are retained in the source and game package. Raptor source is GPL-2.0-or-later; the native toolkit is GPL-3.0; SDL uses the zlib license; bundled miniz uses the MIT license. Original game data retains its original rights and is separate from the source licenses. No registered/full-game assets are distributed.
 
 ## Credits
 
@@ -61,7 +62,7 @@ Created using Codex/ChatGPT. If you don't like that, then I'm sorry i guess? Not
 
 ## Reporting problems
 
-Open an issue with firmware, loader versions, reproduction steps, and whether you use bundled shareware or your own full-game data. Do not upload copyrighted full-game data or private information.
+Open an issue with firmware, loader versions, reproduction steps, and whether you use downloaded shareware or your own full-game data. Do not upload copyrighted full-game data or private information.
 
 ## Beta status
 
@@ -80,8 +81,14 @@ When upgrading from alpha:
 
 The update does not automatically migrate old pilot files. See `saves/README.txt` in the package. Quit Game now returns to the dashboard gracefully.
 
+## First-launch data setup
+
+Beta.3 distributes no GLBs, shareware ZIP, DOS executables or personal pilots. The optional, player-initiated shareware download comes from DOSGames.com over verified HTTPS. The complete original ZIP is retained as `shareware-original.zip` beside `eboot.bin`; only the two pinned, SHA-256-verified GLBs are extracted into `/data/homebrew/PPSA94002/`. The package does not download registered/full-game content.
+
+Your matching `content/` files take priority over downloaded shareware. Legacy data in `/data/raptor/` also remains supported. The old `/download0/raptor-shareware/` location is ignored. To bring setup back, remove the GLBs from the installed title root, `content/`, and any other supported data folder, then fully close and restart. Keep `saves/` to preserve your pilots. Keeping the original ZIP allows setup to reinstall verified shareware without another network download; the ZIP alone does not skip setup.
+
+A six-second top-left popup reports shareware, the full game, or installed episode packs and lists playable sectors. Outer Regions requires both of its files; an incomplete pair is flagged. Download/install, removal/restart, and popup detection have been confirmed on the tested console.
+
 ## Catalog release metadata
 
-The catalog-ready beta ships `contentVersion` **00.003.000** and title ID **PPSA94002**. Committed `sce_sys/param.json` and `sce_sys/icon0.png` match the release package. This release only prepares metadata and licensing for catalog submission; gameplay is unchanged from beta.1.
-
-The repository-level LICENSE is GPL-3.0 for the combined native port; individual upstream notices remain in the attached corresponding-source archive. Original shareware game data is separate and is not relicensed under the GPL. No registered/full-game files are distributed.
+Beta.3 ships `contentVersion` **00.004.000** and title ID **PPSA94002**. Committed `sce_sys/param.json` and `sce_sys/icon0.png` match the release package. The repository-level LICENSE is GPL-3.0 for the combined native port; individual upstream notices remain in the attached corresponding-source archive. Game data retains its original rights. No game data is distributed with beta.3.
