@@ -6,7 +6,7 @@ THE NEW BUILD WILL BE UPLOADED SOON! ONLY THE README HAS BEEN UPDATED AT THIS PO
 
 # RaptorPS5
 
-Unofficial native PS5 port of **Raptor: Call of the Shadows**, based on skynettx’s SDL2 port.
+Unofficial native PS5 port of **Raptor: Call of the Shadows**, based on skynettx’s SDL2 port. This is not meant to be a replacement for the commercial game or any future remaster. This is just a port made by a huge fan!
 
 ## Classic + Enhanced — v1.0.0-rc.1
 
@@ -80,8 +80,6 @@ Highlight a pilot name or callsign field with Cross, then **hold Options for abo
 
 Fire, Cycle Weapon and Megabomb can be reassigned in **Controls**. Select an action, release Cross, then press a face, shoulder or trigger button. Buttons already used by another action are rejected. Options cancels capture; Back discards unsaved changes; Save and Back commits them. Movement, menu navigation and pause/back shortcuts stay fixed.
 
-Keyboard: D-pad selects a character, Cross inputs it, Square sends Backspace, Triangle sends Enter, and Circle closes. The game continues while the keyboard is open; use touchpad to pause. The old R3 controls-reference popup has been removed; use the Controls menu for assignments.
-
 ## Source and licensing
 
 The release includes the modified source archive and SHA-256 checksums alongside the binary package. Source archive includes the Raptor port, modified PS5 SDL, native application toolkit, hooks and build scripts. Build requires the public PS5 payload SDK, LLVM/Clang, CMake and Make; the archive does not bundle the compiler or SDK. Existing workspace build scripts assume locally prepared dependencies.
@@ -94,9 +92,10 @@ Upstream license texts are retained in the source and game package. Raptor sourc
 - [ps5-payload-dev/SDL](https://github.com/ps5-payload-dev/SDL) and the public PS5 payload SDK.
 - [blackbearreloaded/ps5-native-app-boilerplate](https://github.com/blackbearreloaded/ps5-native-app-boilerplate).
 - Original Raptor creators and respective rights holders.
+- A MASSIVE THANK YOU TO SCOTT HOST AND THE REST OF CYGNUS FOR MAKING RAPTOR! I've loved this game since my childhood and I still truly believe that it's the best shmup ever made!
 
 Banner and dashboard icon artwork were AI-generated. This is an unofficial community port.
-Created using Codex/ChatGPT. If you don't like that, then I'm sorry I guess? Not really though.
+Created with the assistance of Codex/ChatGPT. If you don't like that, then I'm sorry I guess? Not really though.
 
 ## Reporting problems
 
