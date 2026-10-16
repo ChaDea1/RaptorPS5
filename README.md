@@ -8,7 +8,7 @@ Unofficial native PS5 port of **Raptor: Call of the Shadows**, based on skynettx
 
 - **Classic and Enhanced modes**, each with its own pilot saves.
 - **Enhanced: smooth 60 FPS gameplay presentation** with original gameplay timing.
-- **Enhanced: a 16:9 layout** with the original playfield centered between metallic side HUD panels.
+- **Enhanced: a 16:9 layout** with the original playfield centered between classic-faithful side HUD panels.
 - **Original game icons in the Enhanced HUD**, including Megabombs and special weapons.
 - Full campaign, hangar, shop and original progression in both modes, using your installed game data.
 - DualSense controls, on-screen keyboard and a controls reference overlay.
