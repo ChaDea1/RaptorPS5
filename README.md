@@ -4,6 +4,11 @@
 
 Unofficial native PS5 port of **Raptor: Call of the Shadows**, based on skynettx’s SDL2 port.
 
+## !ANNOUNCEMENT!
+
+A new version will be out soon. An enhanced mode will be packaged with classic.
+Enhanced mode will include 60 fps and a new HUD for 16:9 play! More is planned for this mode... A LOT MORE ;)
+
 ## Download
 
 Get the game package from [Releases](https://github.com/ChaDea1/RaptorPS5/releases). **v0.2.0-beta.4** is the current beta prerelease. The package includes no game data. On first launch, download free Apogee shareware or supply your own matching DOS game files.
