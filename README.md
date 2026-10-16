@@ -27,6 +27,7 @@ The action keeps its original simulation speed, movement boundaries, weapons, ba
 
 - Pilot creation, hangar and shop screens still use their original frame pacing; the 60 FPS presentation currently applies to Enhanced gameplay.
 - Opening the pause or abort dialog temporarily hides the Enhanced side HUD.
+- Boss health not being displayed via Ion Scanner in enhanced mode. A hotfix will be pushed for this soon!
 - No background art on the new game menu.
 
 ## Download
