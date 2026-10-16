@@ -1,6 +1,6 @@
 ![Raptor: Call of the Shadows — PS5 port](raptor-banner.png)
 
-!!!DEV NOTE!!!
+# !!!DEV NOTE!!!
 
 THE NEW BUILD WILL BE UPLOADED SOON! ONLY THE README HAS BEEN UPDATED AT THIS POINT. EXPECT IT WITHIN THE NEXT HOUR.
 
