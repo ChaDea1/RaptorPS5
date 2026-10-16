@@ -4,35 +4,42 @@
 
 Unofficial native PS5 port of **Raptor: Call of the Shadows**, based on skynettx’s SDL2 port.
 
+## Classic + Enhanced — v1.0.0-rc.1
+
+The base port is **feature complete**. This first release candidate needs wider community testing and complete campaign playthroughs before v1.0.0. Future graphics and gameplay expansions are planned as **optional mods**, rather than additions required to finish Enhanced.
+
 ## Port features
 
-- **Classic and Enhanced modes**, each with its own pilot saves.
-- **Enhanced: smooth 60 FPS gameplay presentation** with original gameplay timing.
-- **Enhanced: a 16:9 layout** with the original playfield centered between classic-faithful side HUD panels.
-- **Original game icons in the Enhanced HUD**, including Megabombs and special weapons.
-- Full campaign, hangar, shop and original progression in both modes, using your installed game data.
-- DualSense controls, on-screen keyboard and a controls reference overlay.
-- Original in-game music and sound effects.
-- Dedicated pilot saves: ten Classic slots and ten Enhanced slots.
-- Optional first-launch shareware download and support for your own matching full-game DOS files.
-- Graceful Quit to the PS5 dashboard.
+- Native PS5 dashboard application with DualSense support and graceful Quit to dashboard.
+- **Classic:** original presentation, gameplay, weapons, balance and campaign progression.
+- **Enhanced:** smooth 60 FPS rendering with original gameplay timing, the original playfield centered in a 16:9 display, and side HUD panels using original textures, fonts, Megabomb and special-weapon icons.
+- Full campaign, sector selection, hangar, shop, original weapons and progression in both modes, using your installed game data.
+- Ten independent Classic pilot slots and ten Enhanced slots; mode switching keeps their pilots and progression separate.
+- Original music and sound effects, shared audio/detail Options and a game-styled on-screen keyboard for pilot names and callsigns.
+- **Controls menu:** remap Fire, Cycle Weapon and Megabomb with PS5 button symbols, explicit Save and Back, and Restore Defaults. Assignments are shared between modes and retained across restarts.
+- Enhanced pilot creation/loading, level selection, hangar and shop use the corrected smooth menu refresh; the shared main menu also refreshes at 60 Hz. Original discrete animations retain their own cadence.
+- Ion Scanner displays the original-style boss health bar in Enhanced. Enhanced HUD remains visible through pause/abort dialogs and level fades without bringing back Classic HUD elements.
+- Original in-game title background and clean menu lettering, separate Classic/Enhanced wordmarks, and a refreshed PS5 dashboard icon.
+- Optional verified first-launch shareware download, offline reuse of installed data, owned full-game/episode-pack support, and a startup data-detection notice.
+- Optional music-file overrides through the existing mod support.
 
-## Enhanced is here
+## Enhanced edition
 
-Fly Raptor's campaign with smooth 60 FPS gameplay presentation and a new cockpit-style HUD built from the original game's textures, fonts and weapon icons. The 16:9 layout keeps the original playfield centered, with shield, credits, Megabombs and special-weapon information alongside the action.
+Enjoy the original campaign with smoother presentation and a wider cockpit-style layout. Enhanced preserves simulation speed, movement boundaries, weapons, balance and progression. Units remain clipped to the original playfield, with shield, credits, Megabombs and special-weapon information alongside the action. Classic remains available from the same title menu with its own saves.
 
-The action keeps its original simulation speed, movement boundaries, weapons, balance and progression. Create or load an Enhanced pilot from the title menu and take it through the campaign, hangar and shop. Classic remains available for the original presentation, and saves stay separate between the two modes. This is the first Enhanced release, with more enhancements planned.
+## Release candidate status
 
-## Known issues
+The owner has tested Classic and Enhanced with shareware and owned full-game files, including the recent menus, controls and keyboard corrections. Broader console coverage and full campaign playthroughs are still needed. Please report reproducible problems with your firmware, loader versions, selected mode and game-data edition.
 
-- Pilot creation, hangar and shop screens still use their original frame pacing; the 60 FPS presentation currently applies to Enhanced gameplay.
-- Opening the pause or abort dialog temporarily hides the Enhanced side HUD.
-- Boss health not being displayed via Ion Scanner in enhanced mode. A hotfix will be pushed for this soon!
-- No background art on the new game menu.
+Previously listed Ion Scanner, pause/abort HUD, level-fade HUD, menu pacing and startup flashing problems have been addressed. Original low-frame animation artwork is not replaced by the smoother refresh. No PS5 home-menu background or launch artwork is bundled at present; the in-game title background is restored.
+
+## Future mods
+
+The Classic + Enhanced base port is complete. New weapons, weapon/jet leveling, New Game Plus and further graphics changes belong on the optional-mod roadmap. These are plans, not features included in this release or a promise that a general mod framework is already available. Gameplay-changing mods should isolate their saves where needed. Base-port updates will focus on bugs, compatibility and usability.
 
 ## Download
 
-Get the game package from [Releases](https://github.com/ChaDea1/RaptorPS5/releases). **v0.3.0-beta.1** is the current beta prerelease. The package includes no game data. On first launch, download free Apogee shareware or supply your own matching DOS game files.
+Get the game package from [Releases](https://github.com/ChaDea1/RaptorPS5/releases). **v1.0.0-rc.1** is the current release candidate. The package includes no game data. On first launch, download free Apogee shareware or supply your own matching DOS game files.
 
 ## Compatibility
 
@@ -40,7 +47,7 @@ Tested on PS5 firmware **13.42**, with **kstuff** and **ShadowMountPlus v1.7beta
 
 ## Install
 
-1. Extract `raptor-ps5-v0.3.0-beta.1.zip`.
+1. Extract `raptor-ps5-v1.0.0-rc.1.zip`.
 2. Copy the complete `PPSA94002` folder to `/data/homebrew/`.
 3. Launch **Raptor: Call of the Shadows** from the dashboard.
 4. Choose **Download free Apogee shareware** (Internet required once), or **Use my own game files**. Existing matching data works offline.
@@ -51,11 +58,11 @@ Close the game before updating. Back up existing pilot saves and configuration. 
 
 Copy your own matching DOS game GLBs (`FILE0000.GLB` through `FILE0004.GLB`, plus any others supplied) directly into `PPSA94002/content/`, or `/data/homebrew/PPSA94002/content/` after installation. Uppercase and lowercase canonical filenames work. Archives, installers and nested folders are not read. See `content/README.txt` in the package. Fully close and restart the game after changing content. Remove custom GLBs to return to downloaded shareware screen, if installed.
 
-## NOTE
+## On-screen keyboard
 
-The OSK was implemented for inputting your pilot name and callsign when starting a new game. Use cross to highlight the name field and bring up the OSK. Input what you want, hit triangle to cycle to the callsign field, and hit triangle again to proceed to the difficulty selection popup. Circle backs out of the keyboard.
+Highlight a pilot name or callsign field with Cross, then **hold Options for about 700 ms** to open the keyboard. D-pad selects a key, Cross types it, Square sends Backspace, Triangle sends Enter, and Circle closes the keyboard. Enter advances the name/callsign dialog and proceeds to difficulty selection when complete. The keyboard uses the original game fonts and metal texture.
 
-## DualSense controls
+## Default DualSense controls
 
 | Control | Action |
 | --- | --- |
@@ -66,9 +73,10 @@ The OSK was implemented for inputting your pilot name and callsign when starting
 | Touchpad click | Pause / resume |
 | Short Options press | Abort mission dialog |
 | Hold Options for 700 ms | Toggle keyboard |
-| R3 | Toggle controls reference overlay|
 
-Keyboard: D-pad selects a character, Cross inputs it, Square sends Backspace, Triangle sends Enter, and Circle closes. The game continues while overlays are open; use touchpad to pause.
+Fire, Cycle Weapon and Megabomb can be reassigned in **Controls**. Select an action, release Cross, then press a face, shoulder or trigger button. Buttons already used by another action are rejected. Options cancels capture; Back discards unsaved changes; Save and Back commits them. Movement, menu navigation and pause/back shortcuts stay fixed.
+
+Keyboard: D-pad selects a character, Cross inputs it, Square sends Backspace, Triangle sends Enter, and Circle closes. The game continues while the keyboard is open; use touchpad to pause. The old R3 controls-reference popup has been removed; use the Controls menu for assignments.
 
 ## Source and licensing
 
@@ -83,25 +91,25 @@ Upstream license texts are retained in the source and game package. Raptor sourc
 - [blackbearreloaded/ps5-native-app-boilerplate](https://github.com/blackbearreloaded/ps5-native-app-boilerplate).
 - Original Raptor creators and respective rights holders.
 
-Dashboard artwork was AI-generated. This is an unofficial community port.
+Banner and dashboard icon artwork were AI-generated. This is an unofficial community port.
 Created using Codex/ChatGPT. If you don't like that, then I'm sorry I guess? Not really though.
 
 ## Reporting problems
 
 Open an issue with firmware, loader versions, reproduction steps, and whether you use downloaded shareware or your own full-game data. Never upload copyrighted full-game data or private information.
 
-## Beta status
+## Testing status
 
-Core gameplay, shareware and owned full-game episodes, audio, controls, overlays, saving/loading and Quit to dashboard have been confirmed by the owner on the tested setup. Wider console and firmware coverage is still needed before a stable release.
+Core gameplay, shareware and owned full-game episodes, audio, controls, keyboard, saving/loading and Quit to dashboard have been confirmed by the owner on the tested setup. Wider console and firmware coverage is still needed before a stable release.
 
 ## Saves and updating
 
-Both shareware and full-game pilots now use `/data/homebrew/PPSA94002/saves/`. The game creates the folder when needed. Classic uses `CHAR0000.FIL` through `CHAR0009.FIL`; Enhanced uses `ENH0000.FIL` through `ENH0009.FIL`. Each mode has ten independent slots. Existing Classic pilots remain Classic pilots. Configuration stays in the base app folder.
+Both shareware and full-game pilots now use `/data/homebrew/PPSA94002/saves/`. The game creates the folder when needed. Classic uses `CHAR0000.FIL` through `CHAR0009.FIL`; Enhanced uses `ENH0000.FIL` through `ENH0009.FIL`. Each mode has ten independent slots. Existing Classic pilots remain Classic pilots. General configuration stays in the base app folder; shared controller assignments are stored in `saves/CONTROLS.CFG`.
 
 When upgrading from alpha:
 
 1. Fully close Raptor and back up existing saves and configuration.
-2. Replace `eboot.bin` from the new package. Keep your `content/`, `saves/` and `SETUP.INI`.
+2. Replace `eboot.bin` from the new package. Keep your `content/`, `saves/` (including `CONTROLS.CFG`) and `SETUP.INI`.
 3. Copy existing `CHAR0000.FIL` through `CHAR0009.FIL` from the old app root or `content/` into `saves/`. Do not overwrite another pilot; use an unused slot filename if needed.
 4. Restart and verify your pilots load. Retain the original files as backups until confirmed.
 
@@ -117,4 +125,4 @@ A six-second top-left popup reports shareware, the full game, or installed episo
 
 ## Catalog release metadata
 
-Version 0.3.0-beta.1 ships `contentVersion` **00.006.000** and title ID **PPSA94002**. Committed `sce_sys/param.json` and `sce_sys/icon0.png` match the release package. The repository-level LICENSE is GPL-3.0 for the combined native port; individual upstream notices remain in the attached corresponding-source archive. Game data retains its original rights. No game data is included.
+Version 1.0.0-rc.1 ships `contentVersion` **00.007.000** and title ID **PPSA94002**. Committed `sce_sys/param.json` and `sce_sys/icon0.png` match the release package. The repository-level LICENSE is GPL-3.0 for the combined native port; individual upstream notices remain in the attached corresponding-source archive. Game data retains its original rights. No game data is included.
