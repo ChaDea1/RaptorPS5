@@ -6,7 +6,7 @@ THE NEW BUILD WILL BE UPLOADED SOON! ONLY THE README HAS BEEN UPDATED AT THIS PO
 
 # RaptorPS5
 
-Unofficial native PS5 port of **Raptor: Call of the Shadows**, based on skynettx’s SDL2 port. This is not meant to be a replacement for the commercial game or any future remaster. This is just a port made by a huge fan!
+Unofficial native PS5 port of **Raptor: Call of the Shadows**, based on skynettx’s SDL2 port. This is not meant to be a replacement for the commercial game or any future remaster. This is just a port made by a huge fan! No .GLB game files (shareware or otherwise) are included with this port.
 
 ## Classic + Enhanced — v1.0.0-rc.1
 
