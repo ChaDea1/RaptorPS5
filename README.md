@@ -27,7 +27,7 @@ The action keeps its original simulation speed, movement boundaries, weapons, ba
 
 - Pilot creation, hangar and shop screens still use their original frame pacing; the 60 FPS presentation currently applies to Enhanced gameplay.
 - Opening the pause or abort dialog temporarily hides the Enhanced side HUD.
-- Custom PS5 home-menu background and launch artwork are temporarily disabled.
+- No background on the new game menu.
 
 ## Download
 
