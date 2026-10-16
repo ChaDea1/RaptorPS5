@@ -21,7 +21,6 @@ The base port is **feature complete**. This first release candidate needs wider 
 - Ion Scanner displays the original-style boss health bar in Enhanced. Enhanced HUD remains visible through pause/abort dialogs and level fades without bringing back Classic HUD elements.
 - Original in-game title background and clean menu lettering, separate Classic/Enhanced wordmarks, and a refreshed PS5 dashboard icon.
 - Optional verified first-launch shareware download, offline reuse of installed data, owned full-game/episode-pack support, and a startup data-detection notice.
-- Optional music-file overrides through the existing mod support.
 
 ## Enhanced edition
 
