@@ -4,14 +4,34 @@
 
 Unofficial native PS5 port of **Raptor: Call of the Shadows**, based on skynettx’s SDL2 port.
 
-## !ANNOUNCEMENT!
+## Port features
 
-A new version will be out soon. An enhanced mode will be packaged with classic.
-Enhanced mode will include 60 fps and a new HUD for 16:9 play! More is planned for this mode... A LOT MORE ;)
+- **Classic and Enhanced modes**, each with its own pilot saves.
+- **Enhanced: smooth 60 FPS gameplay presentation** with original gameplay timing.
+- **Enhanced: a 16:9 layout** with the original playfield centered between metallic side HUD panels.
+- **Original game icons in the Enhanced HUD**, including Megabombs and special weapons.
+- Full campaign, hangar, shop and original progression in both modes, using your installed game data.
+- DualSense controls, on-screen keyboard and a controls reference overlay.
+- Original in-game music and sound effects.
+- Dedicated pilot saves: ten Classic slots and ten Enhanced slots.
+- Optional first-launch shareware download and support for your own matching full-game DOS files.
+- Graceful Quit to the PS5 dashboard.
+
+## Enhanced is here
+
+Fly Raptor's campaign with smooth 60 FPS gameplay presentation and a new cockpit-style HUD built from the original game's textures, fonts and weapon icons. The 16:9 layout keeps the original playfield centered, with shield, credits, Megabombs and special-weapon information alongside the action.
+
+The action keeps its original simulation speed, movement boundaries, weapons, balance and progression. Create or load an Enhanced pilot from the title menu and take it through the campaign, hangar and shop. Classic remains available for the original presentation, and saves stay separate between the two modes. This is the first Enhanced release, with more enhancements planned.
+
+## Known issues
+
+- Pilot creation, hangar and shop screens still use their original frame pacing; the 60 FPS presentation currently applies to Enhanced gameplay.
+- Opening the pause or abort dialog temporarily hides the Enhanced side HUD.
+- Custom PS5 home-menu background and launch artwork are temporarily disabled.
 
 ## Download
 
-Get the game package from [Releases](https://github.com/ChaDea1/RaptorPS5/releases). **v0.2.0-beta.4** is the current beta prerelease. The package includes no game data. On first launch, download free Apogee shareware or supply your own matching DOS game files.
+Get the game package from [Releases](https://github.com/ChaDea1/RaptorPS5/releases). **v0.3.0-beta.1** is the current beta prerelease. The package includes no game data. On first launch, download free Apogee shareware or supply your own matching DOS game files.
 
 ## Compatibility
 
@@ -19,12 +39,12 @@ Tested on PS5 firmware **13.42**, with **kstuff** and **ShadowMountPlus v1.7beta
 
 ## Install
 
-1. Extract `raptor-ps5-v0.2.0-beta.4.zip`.
+1. Extract `raptor-ps5-v0.3.0-beta.1.zip`.
 2. Copy the complete `PPSA94002` folder to `/data/homebrew/`.
 3. Launch **Raptor: Call of the Shadows** from the dashboard.
 4. Choose **Download free Apogee shareware** (Internet required once), or **Use my own game files**. Existing matching data works offline.
 
-Close the game before updating. Back up existing pilot saves and configuration before replacing files.
+Close the game before updating. Back up existing pilot saves and configuration. Update `eboot.bin`, `sce_module/`, `sce_sys/param.json`, `sce_sys/icon0.png` and `licenses/`; retain `saves/`, `content/`, installed GLBs, `shareware-original.zip`, `SETUP.INI` and any personal presentation customizations.
 
 ## Full game
 
@@ -75,7 +95,7 @@ Core gameplay, shareware and owned full-game episodes, audio, controls, overlays
 
 ## Saves and updating
 
-Both shareware and full-game pilots now use `/data/homebrew/PPSA94002/saves/`. The game creates the folder when needed. There are ten pilot slots shared between both modes. Configuration stays in the base app folder.
+Both shareware and full-game pilots now use `/data/homebrew/PPSA94002/saves/`. The game creates the folder when needed. Classic uses `CHAR0000.FIL` through `CHAR0009.FIL`; Enhanced uses `ENH0000.FIL` through `ENH0009.FIL`. Each mode has ten independent slots. Existing Classic pilots remain Classic pilots. Configuration stays in the base app folder.
 
 When upgrading from alpha:
 
@@ -84,11 +104,11 @@ When upgrading from alpha:
 3. Copy existing `CHAR0000.FIL` through `CHAR0009.FIL` from the old app root or `content/` into `saves/`. Do not overwrite another pilot; use an unused slot filename if needed.
 4. Restart and verify your pilots load. Retain the original files as backups until confirmed.
 
-The update does not automatically migrate old pilot files. See `saves/README.txt` in the package. Quit Game  returns to the dashboard gracefully.
+Updating from beta.4 preserves existing Classic pilots. The update does not automatically migrate old alpha pilot files. See `saves/README.txt` in the package. Quit Game  returns to the dashboard gracefully.
 
 ## First-launch data setup
 
-Beta.4 distributes no GLBs, shareware ZIP, DOS executables or personal pilots. The optional, player-initiated shareware download comes from DOSGames.com over verified HTTPS. The complete downloaded ZIP is retained as `shareware-original.zip` beside `eboot.bin`; only the two pinned, SHA-256-verified GLBs are extracted into `/data/homebrew/PPSA94002/`. The package does not download registered/full-game content.
+This release distributes no GLBs, shareware ZIP, DOS executables or personal pilots. The optional, player-initiated shareware download comes from DOSGames.com over verified HTTPS. The complete downloaded ZIP is retained as `shareware-original.zip` beside `eboot.bin`; only the two pinned, SHA-256-verified GLBs are extracted into `/data/homebrew/PPSA94002/`. The package does not download registered/full-game content.
 
 Your matching `content/` files take priority over downloaded shareware. Legacy data in `/data/raptor/` also remains supported. The old `/download0/raptor-shareware/` location is ignored. To bring setup back, remove the GLBs from the installed title root, `content/`, and any other supported data folder, then fully close and restart. Keep `saves/` to preserve your pilots. Keeping the original ZIP allows setup to reinstall verified shareware without another network download; the ZIP alone does not skip setup.
 
@@ -96,8 +116,4 @@ A six-second top-left popup reports shareware, the full game, or installed episo
 
 ## Catalog release metadata
 
-Beta.4 ships `contentVersion` **00.005.000** and title ID **PPSA94002**. Committed `sce_sys/param.json` and `sce_sys/icon0.png` match the release package. The repository-level LICENSE is GPL-3.0 for the combined native port; individual upstream notices remain in the attached corresponding-source archive. Game data retains its original rights. No game data is distributed with beta.4.
-
-## Beta.4 license-notice corrections
-
-Beta.4 adds TinySoundFont's MIT notice, textscreen font attributions, the original Nuked OPL3 LGPL text for provenance, and an explicit GPLv3 election for the shipped OPL3 copy. It adds dated PS5 modification notices, a component notice summary and corresponding-source/rebuild guidance. See `licenses/` in the installed app and `native/licenses/` in the attached source archive. The executable and runtime are byte-for-byte identical to the console-tested beta.3; the content version and notices change.
+Version 0.3.0-beta.1 ships `contentVersion` **00.006.000** and title ID **PPSA94002**. Committed `sce_sys/param.json` and `sce_sys/icon0.png` match the release package. The repository-level LICENSE is GPL-3.0 for the combined native port; individual upstream notices remain in the attached corresponding-source archive. Game data retains its original rights. No game data is included.
