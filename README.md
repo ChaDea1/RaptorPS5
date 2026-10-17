@@ -10,9 +10,9 @@ Based on [skynettx's SDL2 port](https://github.com/skynettx/raptor), this projec
 
 **This is not an official release or a replacement for the commercial game or any future remaster.** No original `.GLB` game data is bundled with the port.
 
-## Classic + Enhanced — v1.0.0-rc.1
+## Classic + Enhanced — v1.0.0-rc.2
 
-The base port is **feature complete** and has entered its first release-candidate stage.
+The base port is **feature complete** and is now in its second release-candidate stage.
 
 Both modes are playable, with the original campaign, weapons, shop, hangar, and progression intact. Before the stable v1.0.0 release, I'd like to see more community testing across different PS5 setups and complete campaign playthroughs.
 
@@ -48,12 +48,13 @@ Enhanced includes:
 - Optional, verified first-launch shareware download.
 - Support for personally owned full-game files and episode packs.
 - Automatic game-data detection with a startup notification.
+- Persistent saves, settings, game data and shareware storage under `/data/RaptorPS5/`, separate from the replaceable app folder.
 
 ## Download
 
 **[Download RaptorPS5 from GitHub Releases](https://github.com/ChaDea1/RaptorPS5/releases)**
 
-Current release: **v1.0.0-rc.1**
+Current release: **v1.0.0-rc.2**
 
 The release includes the PS5 application package, modified source archive, and SHA-256 checksums.
 
@@ -76,7 +77,9 @@ Other firmware versions and homebrew configurations have not yet been verified.
 
 ## Installation
 
-1. Download `raptor-ps5-v1.0.0-rc.1.zip` from the Releases page.
+For a new installation:
+
+1. Download `raptor-ps5-v1.0.0-rc.2.zip` from the Releases page.
 2. Extract the archive.
 3. Copy the entire `PPSA94002` folder to `/data/homebrew/` on your PS5.
 4. Launch **Raptor: Call of the Shadows** from the PS5 dashboard.
@@ -86,11 +89,13 @@ The shareware download requires an internet connection once. Previously installe
 
 RaptorPS5 is also available directly from the Prospero Homebrew Store!
 
+**Upgrading from RC1 or an earlier build? Read “Saves and Updating” and migrate your files before using the catalog updater.**
+
 ### Using your own full-game files
 
 Copy your compatible DOS `.GLB` files directly into:
 
-`/data/homebrew/PPSA94002/content/`
+`/data/RaptorPS5/content/`
 
 Supported files include `FILE0000.GLB` through `FILE0004.GLB`, along with any additional files supplied with your edition.
 
@@ -147,89 +152,59 @@ The keyboard uses the original game's fonts and metal-texture styling.
 
 ### Save locations
 
-Both modes store their pilots in:
+All writable files now live outside the replaceable application folder, under `/data/RaptorPS5/`.
 
-`/data/homebrew/PPSA94002/saves/`
+| Save data              | Location / filename                |
+| ---------------------- | ---------------------------------- |
+| Classic pilots         | `saves/CHAR0000.FIL` – `CHAR0009.FIL` |
+| Enhanced pilots        | `saves/ENH0000.FIL` – `ENH0009.FIL`   |
+| Controller assignments | `saves/CONTROLS.CFG`                |
+| Game settings          | `SETUP.INI`                         |
+| Owned full-game files  | `content/FILE*.GLB`                 |
+| Downloaded shareware   | `FILE*.GLB` and `shareware-original.zip` |
 
-| Save data              | Filename                        |
-| ---------------------- | ------------------------------- |
-| Classic pilots         | `CHAR0000.FIL` – `CHAR0009.FIL` |
-| Enhanced pilots        | `ENH0000.FIL` – `ENH0009.FIL`   |
-| Controller assignments | `CONTROLS.CFG`                  |
-
-Each mode has ten independent pilot slots. Switching modes does not overwrite the other mode's progression.
-
-The save directory is created automatically when needed. General configuration remains in the application root.
+Classic and Enhanced each have ten independent pilot slots. Their progress does not overwrite the other mode. Settings, saves and game files remain in `/data/RaptorPS5/` when the catalog replaces the app folder.
 
 ### Updating an existing installation
 
-**Always fully close RaptorPS5 and back up your saves and configuration before updating.**
+**Before updating RC1 or an earlier release through the PS5 Homebrew Catalog, migrate your files.** The catalog replaces the entire `/data/homebrew/PPSA94002/` folder. Old files left there may be deleted before RC2 can start, and cannot then be imported by the new build.
 
-For a normal update, replace the updated application files:
+Fully close Raptor. Back up your existing files, then copy them into the matching persistent locations:
 
-- `eboot.bin`
-- `sce_module/`
-- `sce_sys/param.json`
-- `sce_sys/icon0.png`
-- `licenses/`
+- Old `saves/` (including `CONTROLS.CFG`) → `/data/RaptorPS5/saves/`
+- Old `content/` and any owned GLBs → `/data/RaptorPS5/content/`
+- `SETUP.INI`, loose `FILE*.GLB` files and `shareware-original.zip` → `/data/RaptorPS5/`
 
-Preserve your existing:
+Alternatively, while the old app folder is still intact, replace only `eboot.bin` with the RC2 executable and launch once. The new build imports recognized saves, settings, game files and the retained shareware archive without deleting the originals or overwriting existing persistent files. Verify both modes’ pilots, loading and saving, settings and game data, and keep your backup. Optional legacy mod folders may need to be copied manually.
 
-- `saves/`
-- `content/`
-- Installed `.GLB` files
-- `shareware-original.zip`
-- `SETUP.INI`
-- Personal presentation customizations
-
-### Upgrading from an older alpha
-
-Older alpha versions may store Classic pilot files in the application root or `content/` instead of the current `saves/` directory.
-
-To migrate:
-
-1. Close the game and back up your existing installation.
-2. Install the updated application files while preserving your content and configuration.
-3. Copy existing `CHAR0000.FIL` through `CHAR0009.FIL` into `saves/`.
-4. If a destination slot already exists, choose an unused slot filename rather than overwriting another pilot.
-5. Restart the game and confirm that your pilots load correctly.
-
-Keep your original files until migration is verified.
-
-Updates from beta.4 preserve existing Classic pilots. Older alpha pilot files are **not automatically migrated**.
-
-Additional guidance is included in `saves/README.txt`.
+If the catalog already removed the old app folder, the new app cannot recover files that were left there. After migration, ordinary catalog updates can replace the application folder; **never delete `/data/RaptorPS5/`** if you want to keep your files. New installations can follow the Installation steps above.
 
 ## First-Launch Game Data Setup
 
 RaptorPS5 does not distribute original `.GLB` files, shareware ZIPs, DOS executables, or personal pilot data.
 
-The optional shareware installer is initiated by the player and downloads the free shareware package from DOSGames.com over verified HTTPS.
-
-The downloaded archive is retained as `shareware-original.zip` alongside `eboot.bin`. Only the two expected `.GLB` files are extracted, after SHA-256 verification, into the installed application directory.
-
-The original ZIP can be reused for installation without downloading it again.
+The optional shareware installer is initiated by the player and downloads the free shareware package from DOSGames.com over verified HTTPS. The downloaded archive is retained at `/data/RaptorPS5/shareware-original.zip`. Only the two expected `.GLB` files are extracted, after SHA-256 verification, into `/data/RaptorPS5/`.
 
 ### Data detection and priority
 
 RaptorPS5 checks for supported game data at startup.
 
-- Personally installed files in `content/` take priority over downloaded shareware.
-- The older `/download0/raptor-shareware/` location is ignored.
+- Personally installed files in `/data/RaptorPS5/content/` take priority over downloaded shareware.
+- Legacy game data is checked during migration; the old `/download0/raptor-shareware/` location is ignored.
 - A six-second notification identifies detected game data and available sectors.
 - Incomplete Outer Regions file pairs are reported.
 
-To return to first-launch setup, remove the installed `.GLB` files from the application root, `content/`, and any other supported data locations, then fully restart the game.
+To return to first-launch setup, remove the installed `.GLB` files from `/data/RaptorPS5/`, `/data/RaptorPS5/content/`, and any other supported data locations, then fully restart the game.
 
-**Do not delete `saves/` if you want to preserve your pilots.**
+**Do not delete `/data/RaptorPS5/` if you want to preserve your pilots, settings, or game files.**
 
-Keeping `shareware-original.zip` allows verified shareware to be reinstalled without another download, although the ZIP alone does not bypass the setup screen. The download option will extract the shareware files from the existing ZIP file.
+Keeping `shareware-original.zip` allows verified shareware to be reinstalled without another download, although the ZIP alone does not bypass the setup screen. The download option can reuse the existing archive.
 
 No registered or full-game content is downloaded by the application.
 
 ## Release Candidate Status
 
-RaptorPS5 is currently in its first release-candidate stage.
+RaptorPS5 is currently in its second release-candidate stage. The persistent-storage change is new in RC2; the RC2 executable was uploaded to a PS5, but this build still needs runtime verification after launch.
 
 The following have been tested on the developer's PS5 setup:
 
@@ -261,7 +236,7 @@ The Classic + Enhanced base port is complete. Future development will explore op
 - Additional graphics enhancements.
 - Further gameplay expansion.
 
-These features are **planned, not included in v1.0.0-rc.1**.
+These features are **planned, not included in v1.0.0-rc.2**.
 
 A general-purpose mod framework is not currently advertised as available. Gameplay-changing additions may require separate save handling.
 
